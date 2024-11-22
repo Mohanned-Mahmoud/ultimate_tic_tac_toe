@@ -19,8 +19,14 @@ jobs:
     - name: Debug - List all files recursively
       run: find . -type f
 
+    - name: Set working directory to Ultimit_X_O
+      working-directory: ./Ultimit_X_O
+      run: echo "Changed working directory to Ultimit_X_O"
+
     - name: Grant execute permissions for gradlew
-      run: chmod +x ./Ultimit_X_O/gradlew
+      working-directory: ./Ultimit_X_O
+      run: chmod +x gradlew
 
     - name: Build with Gradle
-      run: ./Ultimit_X_O/gradlew build
+      working-directory: ./Ultimit_X_O
+      run: ./gradlew build
