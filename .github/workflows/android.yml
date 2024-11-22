@@ -16,11 +16,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up JDK
-      uses: actions/setup-java@v3
-      with:
-        distribution: 'zulu'
-        java-version: '11'
+    - name: Debug - List files
+      run: ls -al
 
     - name: Grant execute permissions for gradlew
       run: chmod +x ./gradlew
