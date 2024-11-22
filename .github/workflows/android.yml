@@ -16,11 +16,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Debug - List files
-      run: ls -al
+    - name: Debug - List all files recursively
+      run: find . -type f
 
     - name: Grant execute permissions for gradlew
-      run: chmod +x ./gradlew
+      run: chmod +x ./Ultimit_X_O/gradlew
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./Ultimit_X_O/gradlew build
