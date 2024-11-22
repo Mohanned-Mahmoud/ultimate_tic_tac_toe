@@ -1,0 +1,19 @@
+buildscript {
+    ext.kotlin_version = '1.4.32'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    // Do not add repositories here to avoid conflicts
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
