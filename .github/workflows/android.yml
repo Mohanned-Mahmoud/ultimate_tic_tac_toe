@@ -19,7 +19,8 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v2
       with:
-        java-version: '11'
+        distribution: 'zulu' # Use 'zulu' as the JDK distribution
+        java-version: '11'   # Specify the Java version you are using
 
     - name: Build with Gradle
       run: ./gradlew build
