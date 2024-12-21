@@ -1,0 +1,13 @@
+<resources>
+    <!-- Define any IDs needed for the project -->
+    <item name="globalBoard" type="id" />
+    <item name="localBoard0" type="id" />
+    <item name="localBoard1" type="id" />
+    <item name="localBoard2" type="id" />
+    <item name="localBoard3" type="id" />
+    <item name="localBoard4" type="id" />
+    <item name="localBoard5" type="id" />
+    <item name="localBoard6" type="id" />
+    <item name="localBoard7" type="id" />
+    <item name="localBoard8" type="id" />
+</resources>
