@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@drawable/background_image2">
+
     <!-- Settings Icon at the top right -->
     <ImageView
         android:id="@+id/settingsIcon"
@@ -12,7 +13,6 @@
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -29,15 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/settingsIcon"
         android:layout_centerHorizontal="true"
-<<<<<<< HEAD
-<<<<<<< HEAD
         android:layout_marginTop="16dp"
-=======
-        android:layout_marginTop="1dp"
->>>>>>> 2338cdc (uploaded files)
-=======
-        android:layout_marginTop="16dp"
->>>>>>> origin/ibrahim
         android:fontFamily="@font/blowbrush"
         android:text="@string/welcome"
         android:textColor="@color/deepRed"
@@ -46,19 +38,6 @@
 
     <!-- Container for the GridLayout -->
     <LinearLayout
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/ibrahim
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/myTextView"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:visibility="visible"
-        android:background="@drawable/background_image2">
-<<<<<<< HEAD
-=======
         android:id="@+id/boardlayout"
         android:layout_width="match_parent"
         android:layout_height="479dp"
@@ -66,11 +45,7 @@
         android:background="@drawable/background_image2"
         android:gravity="top|center_horizontal"
         android:orientation="horizontal"
-
         android:visibility="visible">
->>>>>>> 2338cdc (uploaded files)
-=======
->>>>>>> origin/ibrahim
 
         <GridLayout
             android:id="@+id/globalBoard"
@@ -80,18 +55,10 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="0dp"
             android:layout_marginRight="15dp"
-<<<<<<< HEAD
-<<<<<<< HEAD
             android:layout_marginBottom="15dp"
-=======
->>>>>>> 2338cdc (uploaded files)
-=======
-            android:layout_marginBottom="15dp"
->>>>>>> origin/ibrahim
             android:columnCount="3"
             android:padding="20dp"
             android:rowCount="3">
-
 
             <!-- Include nine local boards -->
             <include
@@ -166,11 +133,9 @@
                 android:layout_row="2"
                 android:layout_column="2" />
         </GridLayout>
-
     </LinearLayout>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
+    <!-- Control Buttons -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -178,6 +143,7 @@
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
         android:gravity="center">
+
         <Button
             android:id="@+id/restartButton"
             android:layout_width="wrap_content"
@@ -187,6 +153,7 @@
             android:background="@drawable/button_3d"
             android:textColor="@color/white"
             android:visibility="gone"/>
+
         <Button
             android:id="@+id/quitButton"
             android:layout_width="wrap_content"
@@ -197,8 +164,4 @@
             android:textColor="@color/white"
             android:visibility="gone"/>
     </LinearLayout>
-
->>>>>>> 2338cdc (uploaded files)
-=======
->>>>>>> origin/ibrahim
 </RelativeLayout>
