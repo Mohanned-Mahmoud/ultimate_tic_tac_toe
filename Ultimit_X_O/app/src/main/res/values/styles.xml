@@ -1,0 +1,69 @@
+<resources>
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/deepBlue</item>
+        <item name="colorPrimaryDark">@color/forestGreen</item>
+        <item name="colorAccent">@color/sageGreen</item>
+
+        <!-- Customize text appearance -->
+        <item name="android:textColor">@color/deepRed</item>
+        <item name="android:fontFamily">@font/blowbrush</item>
+
+        <!-- Customize action bar -->
+
+    </style>
+
+    <!-- Action bar style -->
+    <style name="MyActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="background">@color/deepBlue</item>
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
+    </style>
+
+    <!-- Action bar title text style -->
+    <style name="MyActionBarTitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/sunsetOrange</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/blowbrush</item>
+    </style>
+
+    <!-- Button style -->
+    <style name="MyButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:fontFamily">@font/blowbrush</item>
+    </style>
+
+    <!-- TextView style -->
+    <style name="MyTextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/deepRed</item>
+        <item name="android:fontFamily">@font/blowbrush</item>
+    </style>
+    <style name="LocalBoardButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/your_button_background</item>
+        <item name="android:textColor">@color/sunsetOrange</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <!-- Commented out android:elevation since it's causing issues -->
+        <!-- <item name="android:elevation">4dp</item> -->
+        <item name="android:shadowColor">@color/shadowColor</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+    <!-- EditText style -->
+    <style name="MyEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edittext_background</item>
+        <item name="android:textColor">@color/deepBlue</item>
+        <item name="android:fontFamily">@font/blowbrush</item>
+    </style>
+
+    <!-- Dialog style -->
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/burntOrange</item>
+        <item name="android:textColor">@color/deepBlue</item>
+    </style>
+</resources>
