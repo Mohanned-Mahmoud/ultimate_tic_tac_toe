@@ -30,10 +30,14 @@
         android:layout_below="@id/settingsIcon"
         android:layout_centerHorizontal="true"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:layout_marginTop="16dp"
 =======
         android:layout_marginTop="1dp"
 >>>>>>> 2338cdc (uploaded files)
+=======
+        android:layout_marginTop="16dp"
+>>>>>>> origin/ibrahim
         android:fontFamily="@font/blowbrush"
         android:text="@string/welcome"
         android:textColor="@color/deepRed"
@@ -43,6 +47,9 @@
     <!-- Container for the GridLayout -->
     <LinearLayout
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/ibrahim
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/myTextView"
@@ -50,6 +57,7 @@
         android:orientation="horizontal"
         android:visibility="visible"
         android:background="@drawable/background_image2">
+<<<<<<< HEAD
 =======
         android:id="@+id/boardlayout"
         android:layout_width="match_parent"
@@ -61,6 +69,8 @@
 
         android:visibility="visible">
 >>>>>>> 2338cdc (uploaded files)
+=======
+>>>>>>> origin/ibrahim
 
         <GridLayout
             android:id="@+id/globalBoard"
@@ -71,9 +81,13 @@
             android:layout_marginTop="0dp"
             android:layout_marginRight="15dp"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:layout_marginBottom="15dp"
 =======
 >>>>>>> 2338cdc (uploaded files)
+=======
+            android:layout_marginBottom="15dp"
+>>>>>>> origin/ibrahim
             android:columnCount="3"
             android:padding="20dp"
             android:rowCount="3">
@@ -155,6 +169,7 @@
 
     </LinearLayout>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <LinearLayout
         android:layout_width="wrap_content"
@@ -184,4 +199,6 @@
     </LinearLayout>
 
 >>>>>>> 2338cdc (uploaded files)
+=======
+>>>>>>> origin/ibrahim
 </RelativeLayout>

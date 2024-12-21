@@ -18,11 +18,14 @@ import android.widget.Toast;
 import android.widget.VideoView;
 import android.media.MediaPlayer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import android.widget.Button;
 import android.widget.TextView;
 
 >>>>>>> 2338cdc (uploaded files)
+=======
+>>>>>>> origin/ibrahim
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -87,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
 
 =======
@@ -122,6 +126,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 >>>>>>> 2338cdc (uploaded files)
+=======
+    }
+
+>>>>>>> origin/ibrahim
     private void triggerVibration(int duration) {
         if (preferences.getBoolean("vibration", true)) {
             if (vibrator != null) {
@@ -234,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
         Button restartButton = findViewById(R.id.restartButton);
@@ -241,6 +250,8 @@ public class MainActivity extends AppCompatActivity {
         restartButton.setVisibility(View.VISIBLE);
         quitButton.setVisibility(View.VISIBLE);
 >>>>>>> 2338cdc (uploaded files)
+=======
+>>>>>>> origin/ibrahim
     }
 
     private void updateLocalBoardView(GridLayout localBoard, String winner) {
