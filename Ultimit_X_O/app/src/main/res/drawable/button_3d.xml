@@ -1,0 +1,35 @@
+<!-- res/drawable/button_3d.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Bottom shadow layer -->
+    <item>
+        <shape>
+            <corners android:radius="16dp" />
+            <solid android:color="@color/forestGreen" />
+            <padding
+                android:left="1dp"
+                android:top="1dp"
+                android:right="1dp"
+                android:bottom="1dp" />
+        </shape>
+    </item>
+    <!-- Middle shadow layer -->
+    <item android:top="1dp" android:left="1dp">
+        <shape>
+            <corners android:radius="16dp" />
+            <gradient
+                android:angle="360"
+                android:startColor="@color/deepBlue"
+                android:endColor="@color/primaryBlue" />
+        </shape>
+    </item>
+    <!-- Top highlight layer -->
+    <item android:top="1dp" android:left="1dp">
+        <shape>
+            <gradient
+                android:angle="36"
+                android:startColor="#722B4695"
+                android:endColor="@color/sunsetOrange" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+</layer-list>
