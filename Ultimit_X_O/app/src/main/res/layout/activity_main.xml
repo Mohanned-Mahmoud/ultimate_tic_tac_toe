@@ -29,22 +29,23 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/settingsIcon"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="1dp"
         android:fontFamily="@font/blowbrush"
         android:text="@string/welcome"
-        android:textColor="@color/deepRed"
+        android:textColor="#D9E3C3"
         android:textSize="38sp"
         android:gravity="center" />
 
     <!-- Container for the GridLayout -->
     <LinearLayout
+        android:id="@+id/boardlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="479dp"
         android:layout_below="@id/myTextView"
-        android:gravity="center"
+        android:gravity="top|center_horizontal"
         android:orientation="horizontal"
-        android:visibility="visible"
-        android:background="@drawable/background_image2">
+
+        android:visibility="visible">
 
         <GridLayout
             android:id="@+id/globalBoard"
@@ -54,7 +55,6 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="0dp"
             android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
             android:columnCount="3"
             android:padding="20dp"
             android:rowCount="3">
@@ -135,4 +135,31 @@
         </GridLayout>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/boardlayout"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/restartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restart"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_rounded"
+            android:textColor="@color/white"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/quitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quit"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_rounded"
+            android:textColor="@color/white"
+            android:visibility="gone"/>
+    </LinearLayout>
+
 </RelativeLayout>

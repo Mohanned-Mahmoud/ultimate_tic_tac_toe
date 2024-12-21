@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StartActivity"
-    android:background="@drawable/mainbg">
+    android:background="@drawable/mainbg2">
 
     <TextView
         android:id="@+id/gameTitle"
@@ -36,9 +36,9 @@
         android:layout_below="@id/gameDescription"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:background="@drawable/button_3d"
+        android:background="@drawable/button_rounded"
         android:fontFamily="@font/blowbrush"
-        android:textColor="@color/deepRed"
+        android:textColor="#D9E3C3"
         android:textSize="30sp" />
 
     <Button
@@ -49,9 +49,9 @@
         android:layout_below="@id/startGameButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:background="@drawable/button_3d"
+        android:background="@drawable/button_rounded"
         android:fontFamily="@font/blowbrush"
-        android:textColor="@color/deepRed"
+        android:textColor="#D9E3C3"
         android:textSize="30sp" />
 
     <Button
@@ -62,15 +62,10 @@
         android:layout_below="@id/howToPlayButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:background="@drawable/button_3d"
+        android:background="@drawable/button_rounded"
         android:fontFamily="@font/blowbrush"
-        android:textColor="@color/deepRed"
+        android:textColor="#D9E3C3"
         android:textSize="30sp" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="197dp"
-        android:layout_height="362dp"
-        android:layout_alignParentBottom="true"
-        app:srcCompat="@drawable/cats_lamb" />
+
 </RelativeLayout>

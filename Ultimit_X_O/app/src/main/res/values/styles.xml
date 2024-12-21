@@ -7,7 +7,7 @@
         <item name="colorAccent">@color/sageGreen</item>
 
         <!-- Customize text appearance -->
-        <item name="android:textColor">@color/deepRed</item>
+        <item name="android:textColor">#D9E3C3</item>
         <item name="android:fontFamily">@font/blowbrush</item>
 
         <!-- Customize action bar -->
@@ -37,7 +37,7 @@
 
     <!-- TextView style -->
     <style name="MyTextViewStyle" parent="Widget.AppCompat.TextView">
-        <item name="android:textColor">@color/deepRed</item>
+        <item name="android:textColor">#D9E3C3</item>
         <item name="android:fontFamily">@font/blowbrush</item>
     </style>
     <style name="LocalBoardButton">

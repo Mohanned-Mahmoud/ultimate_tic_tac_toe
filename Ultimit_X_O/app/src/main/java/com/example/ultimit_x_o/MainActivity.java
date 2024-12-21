@@ -17,6 +17,9 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.VideoView;
 import android.media.MediaPlayer;
+import android.widget.Button;
+import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -80,7 +83,36 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button restartButton = findViewById(R.id.restartButton);
+        Button quitButton = findViewById(R.id.quitButton);
+
+        // Initially hide buttons
+        restartButton.setVisibility(View.GONE);
+        quitButton.setVisibility(View.GONE);
+
+        // Restart Button functionality
+        restartButton.setOnClickListener(v -> {
+            resetGame();
+            restartButton.setVisibility(View.GONE);
+            quitButton.setVisibility(View.GONE);
+            Toast.makeText(this, "Game Restarted!", Toast.LENGTH_SHORT).show();
+        });
+
+        // Quit Button functionality
+        quitButton.setOnClickListener(v -> finish());
+
     }
+
+
+
+    private void resetGame() {
+
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+    }
+
 
     private void triggerVibration(int duration) {
         if (preferences.getBoolean("vibration", true)) {
@@ -193,6 +225,11 @@ public class MainActivity extends AppCompatActivity {
                 musicManager.resumeBackgroundMusic();
             }
         });
+
+        Button restartButton = findViewById(R.id.restartButton);
+        Button quitButton = findViewById(R.id.quitButton);
+        restartButton.setVisibility(View.VISIBLE);
+        quitButton.setVisibility(View.VISIBLE);
     }
 
     private void updateLocalBoardView(GridLayout localBoard, String winner) {
