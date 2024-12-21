@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Tic-Tac-Toe: Play Super Big Game Online!</title>
+    <meta name="description" content="Try Ultimate Tic-Tac-Toe on a super-big board! Dive into the advanced gameplay on a mega-sized 9 classic fields at once for an extremely new experience!" />
+    <meta name="google" content="notranslate">
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo-32x32.png">
+    <link rel="stylesheet" href="page2 1.css">
+    <link rel="stylesheet" href="page2 3.css">
+
+    <style>
+        .top-blocks {
+            min-height: 50px;
+            display: flex;
+            cursor: pointer;
+            font-size: 19px;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        /* Transition effect for fading out */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="ultimate">
+    <!-- Main container -->
+    <div class="container">
+        <div class="row">
+            <!-- Logo -->
+            <div class="">
+                <div class="navigation">
+                    <div class="nav-container">
+                        <div class="brand">
+                            <a href="/"><img class="logo" src="logowhite.png" alt="TicTacToe" width="210" height="69"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="wrapper">
+            <h1>Ultimate Tic-Tac-Toe</h1>
+            <div class="game-mode">
+                <div class="row no-gutter">
+                    <div class="top-blocks col-xs-4 unselectable">
+                        <div id="reset-button"><img src="/img/restart.svg" height="35" width="35" title="Restart game" alt="Restart game"></div>
+                    </div>
+                    <div id="handlerMode" class="top-blocks col-xs-4 unselectable">
+                        <img src="/img/player.svg" height="35" width="35" title="Player vs Player" alt="Player vs Player">
+                    </div>
+                    <div id="handlerDiff" class="top-blocks col-xs-4 unselectable" style="display: none;">EASY</div>
+                </div>
+                <select id="mode">
+                    <option value="1" selected="selected">Player vs Player</option>
+                    <option value="0">Player vs Computer</option>
+                </select>
+            </div>
+
+            <div class="ober">
+                <canvas id="tictac" class="inactive">
+                    Your browser does not support the canvas element.
+                </canvas>
+                <div id="helper"></div>
+
+                <!-- Counters -->
+                <div class="counters row row-flex" style="display:none">
+                    <div class="col-xs-5">
+                        <div class="p1name">Player 1 <br/>(X)</div>
+                        <div class="p1w"></div>
+                    </div>
+                    <div class="col-xs-5">
+                        <div class="p2name">Player 2 <br/>(O)</div>
+                        <div class="p2w"></div>
+                    </div>
+                    <div class="col-xs-5">
+                        <div class="compname">Computer <br/>(O)</div>
+                        <div class="cw"></div>
+                    </div>
+                    <div id="reset-counter" class="col-xs-2 top-blocks unselectable">
+                        <img src="/img/clear.svg" height="35" width="35" title="Clear counters" alt="Clear counters">
+                    </div>
+                </div>
+                <!-- End counters -->
+
+                <div class="absolute" id="startMenu">
+                    <p onclick="transitionPage('page2 one player.html')"><span class="buttonand">1 Player</span></p>
+                    <p onclick="transitionPage('page3 two players.html')"><span class="buttonand">2 Players</span></p>
+                </div>
+                <div class="absolute" id="turnMenu" hidden="hidden">
+                    <p onclick="setGame(0)"><span class="buttonand">Player 1st</span></p>
+                    <p onclick="setGame(1)"><span class="buttonand">AI 1st</span></p>
+                </div>
+                <div class="absolute2" id="winMenu" hidden="hidden">
+                    <p class="winner" id="result">Player 1 Wins!</p>
+                    <p onclick="menu()"><span class="buttonand">Play again</span></p>
+                    <p onclick="goHarder()" class="harder"><span class="buttonand grey">More difficult</span></p>
+                </div>
+                <div class="absolute fade" id="loader" hidden>
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- JavaScript files -->
+    <script>
+        function transitionPage(targetPage) {
+            const body = document.querySelector('body');
+            body.classList.add('fade-out'); // Apply the fade-out effect
+            setTimeout(() => {
+                window.location.href = targetPage; // Redirect after the fade-out
+            }, 500); // Match the transition duration
+        }
+    </script>
+</body>
+</html>
