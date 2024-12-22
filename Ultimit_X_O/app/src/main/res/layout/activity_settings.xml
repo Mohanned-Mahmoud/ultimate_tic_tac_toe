@@ -4,14 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsActivity"
+<<<<<<< HEAD
+    android:background="@drawable/mainbg2">
+=======
     android:background="@drawable/background_image">
+>>>>>>> main
 
     <TextView
         android:id="@+id/settingsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/blowbrush"
+<<<<<<< HEAD
+        android:textColor="#A7D129"
+=======
         android:textColor="@color/deepBlue"
+>>>>>>> main
         android:text="@string/settings_title"
         android:textSize="40sp"
         android:layout_centerHorizontal="true"
@@ -33,7 +41,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="@string/vibration"
+<<<<<<< HEAD
+            android:textColor="#A7D129"
+=======
             android:textColor="@color/deepBlue"
+>>>>>>> main
             android:textSize="30sp"
             android:fontFamily="@font/blowbrush"/>
         <ImageView
@@ -64,7 +76,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="@string/music"
+<<<<<<< HEAD
+            android:textColor="#A7D129"
+=======
             android:textColor="@color/deepBlue"
+>>>>>>> main
             android:textSize="30sp"
             android:fontFamily="@font/blowbrush"/>
         <ImageView
@@ -97,7 +113,11 @@
             android:layout_marginTop="-40dp"
             android:fontFamily="@font/blowbrush"
             android:text="@string/sound"
+<<<<<<< HEAD
+            android:textColor="#A7D129"
+=======
             android:textColor="@color/deepBlue"
+>>>>>>> main
             android:textSize="30sp" />
         <ImageView
             android:id="@+id/soundSwitch"
@@ -130,17 +150,29 @@
             android:gravity="left"
             android:text="Choose \n Background \n Music"
 
+<<<<<<< HEAD
+            android:textColor="#A7D129"
+=======
             android:textColor="@color/deepBlue"
+>>>>>>> main
             android:textSize="30sp" />
         <Button
             android:id="@+id/restartGameButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
+            android:background="@drawable/button_rounded"
+            android:fontFamily="@font/blowbrush"
+            android:layout_marginLeft="10dp"
+            android:text="@string/restart_game"
+            android:textColor="#D9E3C3"
+=======
             android:background="@drawable/button_3d"
             android:fontFamily="@font/blowbrush"
             android:layout_marginLeft="10dp"
             android:text="@string/restart_game"
             android:textColor="@color/deepRed"
+>>>>>>> main
             android:textSize="30sp" />
 
 
@@ -153,11 +185,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/restartAndMusicLayout"
         android:layout_marginTop="27dp"
+<<<<<<< HEAD
+        android:background="@drawable/button_rounded"
+        android:entries="@array/music_spinner"
+        android:fontFamily="@font/blowbrush"
+        android:prompt="@string/music_spinner_prompt"
+        android:textColor="#A7D129"
+=======
         android:background="@drawable/button_3d"
         android:entries="@array/music_spinner"
         android:fontFamily="@font/blowbrush"
         android:prompt="@string/music_spinner_prompt"
         android:textColor="@color/deepBlue"
+>>>>>>> main
         android:textSize="30sp" />
 
     <TextView
@@ -168,7 +208,11 @@
         android:layout_centerHorizontal="true"
         android:padding="16dp"
         android:text="© 2024 Ultimate X O. All rights reserved."
+<<<<<<< HEAD
+        android:textColor="#D9E3C3"
+=======
         android:textColor="@android:color/black"
+>>>>>>> main
         android:textSize="12sp" />
 
     <LinearLayout
@@ -211,11 +255,14 @@
             android:focusable="true" />
     </LinearLayout>
 
+<<<<<<< HEAD
+=======
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="119dp"
         android:layout_height="113dp"
         android:layout_alignParentRight="true"
         app:srcCompat="@drawable/cats_moon" />
+>>>>>>> main
 
 </RelativeLayout>

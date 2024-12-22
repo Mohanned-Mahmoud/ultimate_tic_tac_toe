@@ -163,6 +163,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Player " + (isPlayerX ? "X" : "O") + " wins the game!", Toast.LENGTH_SHORT).show();
                 showGlobalWinOverlay(isPlayerX ? "X" : "O");
                 disableAllBoards();
+<<<<<<< HEAD
+            } else if (model.isDraw()) { // Check if the game is a draw
+                Toast.makeText(this, "It's a Draw!", Toast.LENGTH_LONG).show();
+                showDrawOverlay();
+                disableAllBoards();
+=======
+>>>>>>> main
             } else {
                 model.switchPlayer();
                 if (model.isLocalBoardWon(row, col)) {
@@ -176,6 +183,64 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+<<<<<<< HEAD
+    private void showDrawOverlay() {
+        View overlay = getLayoutInflater().inflate(R.layout.global_draw_overlay, null);
+        VideoView drawVideo = overlay.findViewById(R.id.globalDrawVideo);
+        int videoPathh = R.raw.draw_video;
+        String videoPath = "android.resource://" + getPackageName() + "/" + videoPathh;
+        Uri uri = Uri.parse(videoPath);
+        drawVideo.setVideoURI(uri);
+
+        MediaController mediaController = new MediaController(this);
+        drawVideo.setMediaController(mediaController);
+        mediaController.setAnchorView(drawVideo);
+
+        // Set layout parameters for the overlay
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+        );
+        overlay.setLayoutParams(params);
+
+        // Add the overlay to the main layout
+        RelativeLayout mainLayout = findViewById(R.id.mainLayout);
+        mainLayout.addView(overlay);
+
+        // Stop the background music
+        musicManager.pauseBackgroundMusic();
+
+        // Start the video
+        drawVideo.start();
+
+        // Resume music after the video ends
+        drawVideo.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                musicManager.resumeBackgroundMusic();
+                mainLayout.removeView(overlay);
+            }
+        });
+
+        // Optionally, add a click listener to remove the overlay when clicked
+        overlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawVideo.stopPlayback();
+                mainLayout.removeView(overlay);
+                musicManager.resumeBackgroundMusic();
+            }
+        });
+
+        Button restartButton = findViewById(R.id.restartButton);
+        Button quitButton = findViewById(R.id.quitButton);
+        restartButton.setVisibility(View.VISIBLE);
+        quitButton.setVisibility(View.VISIBLE);
+    }
+
+
+=======
+>>>>>>> main
     private void showGlobalWinOverlay(String winner) {
         // Inflate the overlay view
         View overlay = getLayoutInflater().inflate(R.layout.global_win_overlay, null);
@@ -282,7 +347,11 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < localBoards.length; i++) {
             GridLayout localBoard = localBoards[i];
 
+<<<<<<< HEAD
+            if (boardIndex == -1 || model.isLocalBoardDrawn(boardIndex)) {
+=======
             if (boardIndex == -1) {
+>>>>>>> main
                 if (model.isBoardAvailable(i)) {
                     localBoard.setBackgroundResource(R.drawable.highlight_green);
                     enableBoard(localBoard, true);
@@ -300,6 +369,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
     private void enableBoard(GridLayout board, boolean enable) {
         for (int j = 0; j < board.getChildCount(); j++) {
             View view = board.getChildAt(j);
@@ -332,6 +405,8 @@ public class MainActivity extends AppCompatActivity {
         musicManager.pauseBackgroundMusic();
     }
 
+<<<<<<< HEAD
+=======
     private void disableAllExceptHighlighted(int boardIndex) {
         for (int i = 0; i < localBoards.length; i++) {
             if (i != boardIndex) {
@@ -349,4 +424,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+>>>>>>> main
 }

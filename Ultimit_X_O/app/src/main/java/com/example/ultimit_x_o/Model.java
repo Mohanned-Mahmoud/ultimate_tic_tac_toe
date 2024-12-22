@@ -72,12 +72,34 @@ public class Model {
         return true;
     }
 
+<<<<<<< HEAD
+    public boolean isLocalBoardDrawn(int localBoardIndex) {
+        int row = localBoardIndex / DIMENSIONS; // Get the row of the local board
+        int col = localBoardIndex % DIMENSIONS; // Get the column of the local board
+
+        // Check if all cells in the local board are occupied
+        for (int i = 0; i < DIMENSIONS; i++) {
+            for (int j = 0; j < DIMENSIONS; j++) {
+                if (ultimateBoard[row][col][i][j] == null) {
+                    return false; // If any cell is empty, it's not a draw
+                }
+            }
+        }
+
+        // Ensure there's no winner in this local board
+        return !checkLocalBoardWin(ultimateBoard[row][col]);
+    }
+
+
+
+=======
     public void reset() {
         ultimateBoard = new Boolean[DIMENSIONS][DIMENSIONS][DIMENSIONS][DIMENSIONS];
         globalBoard = new Boolean[DIMENSIONS][DIMENSIONS];
         currPlayer = true;
     }
 
+>>>>>>> main
     public boolean isBoardAvailable(int boardIndex) {
         int boardRow = boardIndex / DIMENSIONS;
         int boardCol = boardIndex % DIMENSIONS;
@@ -95,6 +117,9 @@ public class Model {
         }
         return false;
     }
+<<<<<<< HEAD
+}
+=======
 
 
         public void makeAIMove() {
@@ -201,4 +226,5 @@ public class Model {
     }
 
 
+>>>>>>> main
 
