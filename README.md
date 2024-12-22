@@ -67,11 +67,5 @@ If you encounter any bugs or have suggestions, feel free to open an **Issue** on
 ## 📜 **License**
 This project is licensed under the **MIT License**. See the **[LICENSE](LICENSE)** file for details.
 
----
-
-## 📬 **Contact**
-For queries or collaboration:  
-📧 **[Your Email Address]**  
-🌐 **[Your Website or LinkedIn Profile]**
 
 ---
