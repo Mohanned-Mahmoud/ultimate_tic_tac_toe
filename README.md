@@ -15,8 +15,8 @@
 ---
 
 ## 🛠️ **Technologies Used**
-- **Language:** Python  
-- **Libraries:** (List any libraries used, e.g., `pygame`, `tkinter`, etc.)  
+- **Language:** Java  
+- **work engine:** Android studio  
 
 ---
 
@@ -34,17 +34,13 @@
    source venv/bin/activate   # On Windows: venv\Scripts\activate
    ```
 
-3. **Install dependencies:**  
-   ```bash
-   pip install -r requirements.txt
-   ```
 
-4. **Run the game:**  
+3. **Run the game:**  
    ```bash
    python main.py
    ```
 
-5. **Enjoy the game!**
+4. **Enjoy the game!**
 
 ---
 
@@ -65,7 +61,7 @@ python -m unittest discover
 
 ## 🤝 **Contributing**
 We welcome contributions! If you’d like to contribute:
-1. Fork the repository.  
+31. Fork the repository.  
 2. Create a feature branch: `git checkout -b feature/your-feature`  
 3. Commit your changes: `git commit -m "Add new feature"`  
 4. Push to the branch: `git push origin feature/your-feature`  
