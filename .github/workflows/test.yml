@@ -25,6 +25,21 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          api-level: 34
+          build-tools: 34.0.0
+
+      - name: Force UTF-8 Locale
+        run: |
+          export LANG=en_US.UTF-8
+          export LC_ALL=en_US.UTF-8
+
+      - name: Enable Gradle Daemon
+        run: |
+          echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
+
       - name: Set working directory to Ultimit_X_O
         working-directory: ./Ultimit_X_O
         run: echo "Changed working directory to Ultimit_X_O"
@@ -33,10 +48,16 @@ jobs:
         working-directory: ./Ultimit_X_O
         run: chmod +x gradlew
 
+      - name: Clean Gradle Build Cache
+        working-directory: ./Ultimit_X_O
+        run: |
+          ./gradlew clean
+          ./gradlew cleanBuildCache
+
       - name: Verify Gradle Wrapper
         working-directory: ./Ultimit_X_O
         run: ./gradlew --version
 
-      - name: Build with Gradle
+      - name: Build with Gradle (Verbose)
         working-directory: ./Ultimit_X_O
-        run: ./gradlew build
+        run: ./gradlew build --stacktrace --debug
