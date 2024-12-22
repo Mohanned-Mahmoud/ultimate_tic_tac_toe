@@ -36,9 +36,7 @@
 
 
 3. **Run the game:**  
-   ```bash
-   python main.py
-   ```
+buld The project using android studio
 
 4. **Enjoy the game!**
 
@@ -48,14 +46,6 @@
 - Smart board-switching mechanism based on the player's move.
 - Validation of moves and board states.
 - Win detection for both local boards and the global board.
-
----
-
-## 🧪 **Testing**
-If you have included unit tests:
-```bash
-python -m unittest discover
-```
 
 ---
 
