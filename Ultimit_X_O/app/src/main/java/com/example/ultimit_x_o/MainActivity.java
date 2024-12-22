@@ -163,10 +163,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Player " + (isPlayerX ? "X" : "O") + " wins the game!", Toast.LENGTH_SHORT).show();
                 showGlobalWinOverlay(isPlayerX ? "X" : "O");
                 disableAllBoards();
+<<<<<<< HEAD
             } else if (model.isDraw()) { // Check if the game is a draw
                 Toast.makeText(this, "It's a Draw!", Toast.LENGTH_LONG).show();
                 showDrawOverlay();
                 disableAllBoards();
+=======
+>>>>>>> main
             } else {
                 model.switchPlayer();
                 if (model.isLocalBoardWon(row, col)) {
@@ -180,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+<<<<<<< HEAD
     private void showDrawOverlay() {
         View overlay = getLayoutInflater().inflate(R.layout.global_draw_overlay, null);
         VideoView drawVideo = overlay.findViewById(R.id.globalDrawVideo);
@@ -235,6 +239,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+=======
+>>>>>>> main
     private void showGlobalWinOverlay(String winner) {
         // Inflate the overlay view
         View overlay = getLayoutInflater().inflate(R.layout.global_win_overlay, null);
@@ -341,7 +347,11 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < localBoards.length; i++) {
             GridLayout localBoard = localBoards[i];
 
+<<<<<<< HEAD
             if (boardIndex == -1 || model.isLocalBoardDrawn(boardIndex)) {
+=======
+            if (boardIndex == -1) {
+>>>>>>> main
                 if (model.isBoardAvailable(i)) {
                     localBoard.setBackgroundResource(R.drawable.highlight_green);
                     enableBoard(localBoard, true);
@@ -359,7 +369,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     private void enableBoard(GridLayout board, boolean enable) {
         for (int j = 0; j < board.getChildCount(); j++) {
             View view = board.getChildAt(j);
@@ -392,4 +405,24 @@ public class MainActivity extends AppCompatActivity {
         musicManager.pauseBackgroundMusic();
     }
 
+<<<<<<< HEAD
+=======
+    private void disableAllExceptHighlighted(int boardIndex) {
+        for (int i = 0; i < localBoards.length; i++) {
+            if (i != boardIndex) {
+                GridLayout localBoard = localBoards[i];
+                for (int j = 0; j < localBoard.getChildCount(); j++) {
+                    ImageView imageView = (ImageView) localBoard.getChildAt(j);
+                    imageView.setEnabled(false);
+                }
+            } else {
+                GridLayout localBoard = localBoards[i];
+                for (int j = 0; j < localBoard.getChildCount(); j++) {
+                    ImageView imageView = (ImageView) localBoard.getChildAt(j);
+                    imageView.setEnabled(true);
+                }
+            }
+        }
+    }
+>>>>>>> main
 }

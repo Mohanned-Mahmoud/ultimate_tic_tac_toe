@@ -72,6 +72,7 @@ public class Model {
         return true;
     }
 
+<<<<<<< HEAD
     public boolean isLocalBoardDrawn(int localBoardIndex) {
         int row = localBoardIndex / DIMENSIONS; // Get the row of the local board
         int col = localBoardIndex % DIMENSIONS; // Get the column of the local board
@@ -91,6 +92,14 @@ public class Model {
 
 
 
+=======
+    public void reset() {
+        ultimateBoard = new Boolean[DIMENSIONS][DIMENSIONS][DIMENSIONS][DIMENSIONS];
+        globalBoard = new Boolean[DIMENSIONS][DIMENSIONS];
+        currPlayer = true;
+    }
+
+>>>>>>> main
     public boolean isBoardAvailable(int boardIndex) {
         int boardRow = boardIndex / DIMENSIONS;
         int boardCol = boardIndex % DIMENSIONS;
@@ -108,5 +117,114 @@ public class Model {
         }
         return false;
     }
+<<<<<<< HEAD
 }
+=======
+
+
+        public void makeAIMove() {
+            int[] bestMove = minimax(2, currPlayer);
+            int boardRow = bestMove[0];
+            int boardCol = bestMove[1];
+            int spaceRow = bestMove[2];
+            int spaceCol = bestMove[3];
+            ultimateBoard[boardRow][boardCol][spaceRow][spaceCol] = currPlayer;
+        }
+
+        private int[] minimax(int depth, boolean isMaximizing) {
+            Boolean[][][][] tempBoard = copyBoard(ultimateBoard);
+            int[] bestMove = new int[4];
+            int bestScore = isMaximizing ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+
+            for (int boardRow = 0; boardRow < DIMENSIONS; boardRow++) {
+                for (int boardCol = 0; boardCol < DIMENSIONS; boardCol++) {
+                    if (globalBoard[boardRow][boardCol] == null) {
+                        for (int spaceRow = 0; spaceRow < DIMENSIONS; spaceRow++) {
+                            for (int spaceCol = 0; spaceCol < DIMENSIONS; spaceCol++) {
+                                if (ultimateBoard[boardRow][boardCol][spaceRow][spaceCol] == null) {
+                                    ultimateBoard[boardRow][boardCol][spaceRow][spaceCol] = isMaximizing;
+
+                                    int score = minimaxScore(depth - 1, !isMaximizing);
+
+                                    ultimateBoard[boardRow][boardCol][spaceRow][spaceCol] = null;
+
+                                    if (isMaximizing && score > bestScore) {
+                                        bestScore = score;
+                                        bestMove[0] = boardRow;
+                                        bestMove[1] = boardCol;
+                                        bestMove[2] = spaceRow;
+                                        bestMove[3] = spaceCol;
+                                    } else if (!isMaximizing && score < bestScore) {
+                                        bestScore = score;
+                                        bestMove[0] = boardRow;
+                                        bestMove[1] = boardCol;
+                                        bestMove[2] = spaceRow;
+                                        bestMove[3] = spaceCol;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ultimateBoard = tempBoard;
+            return bestMove;
+        }
+
+        private int minimaxScore(int depth, boolean isMaximizing) {
+            Boolean winner = checkGlobalWin();
+            if (winner != null) {
+                return winner == currPlayer ? 10 : -10;
+            }
+
+            if (depth == 0 || isDraw()) {
+                return 0;
+            }
+
+            int bestScore = isMaximizing ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+
+            for (int boardRow = 0; boardRow < DIMENSIONS; boardRow++) {
+                for (int boardCol = 0; boardCol < DIMENSIONS; boardCol++) {
+                    if (globalBoard[boardRow][boardCol] == null) {
+                        for (int spaceRow = 0; spaceRow < DIMENSIONS; spaceRow++) {
+                            for (int spaceCol = 0; spaceCol < DIMENSIONS; spaceCol++) {
+                                if (ultimateBoard[boardRow][boardCol][spaceRow][spaceCol] == null) {
+                                    ultimateBoard[boardRow][boardCol][spaceRow][spaceCol] = isMaximizing;
+
+                                    int score = minimaxScore(depth - 1, !isMaximizing);
+
+                                    ultimateBoard[boardRow][boardCol][spaceRow][spaceCol] = null;
+
+                                    if (isMaximizing) {
+                                        bestScore = Math.max(score, bestScore);
+                                    } else {
+                                        bestScore = Math.min(score, bestScore);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return bestScore;
+        }
+
+        private Boolean[][][][] copyBoard(Boolean[][][][] board) {
+            Boolean[][][][] newBoard = new Boolean[DIMENSIONS][DIMENSIONS][DIMENSIONS][DIMENSIONS];
+            for (int i = 0; i < DIMENSIONS; i++) {
+                for (int j = 0; j < DIMENSIONS; j++) {
+                    for (int k = 0; k < DIMENSIONS; k++) {
+                        System.arraycopy(board[i][j][k], 0, newBoard[i][j][k], 0, DIMENSIONS);
+                    }
+                }
+            }
+            return newBoard;
+        }
+
+    }
+
+
+>>>>>>> main
 
