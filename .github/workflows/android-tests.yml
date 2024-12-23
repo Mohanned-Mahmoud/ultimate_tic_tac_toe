@@ -12,56 +12,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: Ultimit_X_O
-
     steps:
-      ### Step 1: Checkout Repository
-      - name: Checkout Code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      ### Step 2: Set Up Java Environment
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'adopt'
-          java-version: '11'
+    - name: Debug - List all files recursively
+      run: find . -type f
 
-      ### Step 3: Cache Gradle Files
-      - name: Cache Gradle Files
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+    - name: Set working directory to Ultimit_X_O
+      working-directory: ./Ultimit_X_O
+      run: echo "Changed working directory to Ultimit_X_O"
 
-      ### Step 4: Grant Execute Permissions to Gradle Wrapper
-      - name: Grant Execute Permissions to Gradle Wrapper
-        run: chmod +x ./gradlew
+    - name: Grant execute permissions for gradlew
+      working-directory: ./Ultimit_X_O
+      run: chmod +x gradlew
 
-      ### Step 5: Build the Project with Gradle
-      - name: Build with Gradle
-        run: ./gradlew build --stacktrace > build.log 2>&1
-
-      ### Step 6: Run Unit Tests
-      - name: Run Unit Tests
-        run: ./gradlew test --stacktrace > test.log 2>&1
-
-      ### Step 7: Upload Logs
-      - name: Upload Build and Test Logs
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: android-test-logs
-          path: |
-            build.log
-            test.log
-          if-no-files-found: warn
-
-      ### Step 8: Success Message
-      - name: Success
-        run: echo "Build and Tests Completed Successfully!"
+    - name: Build with Gradle
+      working-directory: ./Ultimit_X_O
+      run: ./gradlew build
