@@ -19,30 +19,30 @@ jobs:
         working-directory: Ultimit_X_O
 
     steps:
-      ### 🛠️ Step 1: Checkout the Repository
+      ### Step 1: Checkout the Repository
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      ### 🛠️ Step 2: Set Up Java Environment
+      ### Step 2: Set Up Java Environment
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      ### 🛠️ Step 3: Set Up Android SDK
+      ### Step 3: Set Up Android SDK
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
 
-      ### 🛠️ Step 4: Grant Execute Permissions to Gradle Wrapper
+      ### Step 4: Grant Execute Permissions to Gradle Wrapper
       - name: Grant Execute Permissions to Gradle Wrapper
         run: chmod +x ./gradlew
 
-      ### 🛠️ Step 5: Clean and Build the Project
+      ### Step 5: Clean and Build the Project
       - name: Clean and Build Project
         run: ./gradlew clean build --stacktrace --debug
 
-      ### 🛠️ Step 6: Run Instrumented Tests
+      ### Step 6: Run Instrumented Tests
       - name: Run Instrumented Tests on Android Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -51,7 +51,7 @@ jobs:
           arch: x86_64
           script: ./gradlew connectedAndroidTest --stacktrace --debug
 
-      ### 🛠️ Step 7: Upload Test Results
+      ### Step 7: Upload Test Results
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v3
@@ -60,6 +60,6 @@ jobs:
           path: app/build/reports
           if-no-files-found: warn
 
-      ### ✅ Step 8: Success Message
+      ### Step 8: Success Message
       - name: Success
-        run: echo "✅ Android Tests Completed Successfully!"
+        run: echo "Android Tests Completed Successfully!"
