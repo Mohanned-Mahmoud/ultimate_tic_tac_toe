@@ -14,6 +14,10 @@ jobs:
     name: Run Android Tests
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: Ultimit_X_O
+
     steps:
       ### 🛠️ Step 1: Checkout the Repository
       - name: Checkout Code
