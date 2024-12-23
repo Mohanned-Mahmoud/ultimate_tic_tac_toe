@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code
+      # Step 1: Checkout Code
       - name: Checkout Code
         uses: actions/checkout@v3
 
@@ -28,13 +28,15 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
 
-      # Step 4: Grant execute permissions for Gradle
-      - name: Grant Execute Permissions for Gradle
-        run: chmod +x ./gradlew
+      # Step 4: Install Gradle
+      - name: Install Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: 7.4 # Use your required Gradle version
 
       # Step 5: Build and Run Tests
       - name: Build and Run Tests
-        run: ./gradlew connectedAndroidTest --stacktrace --debug
+        run: gradle connectedAndroidTest --stacktrace --debug
 
       # Step 6: Upload Test Results
       - name: Upload Test Results
