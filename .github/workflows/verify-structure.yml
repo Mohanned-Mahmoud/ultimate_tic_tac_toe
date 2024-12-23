@@ -1,0 +1,33 @@
+name: Verify Project Structure
+
+on: [workflow_dispatch]
+
+jobs:
+  verify-structure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: List Directory Structure
+        run: |
+          echo "Root Directory Contents:"
+          ls -R
+
+      - name: Check Essential Files
+        run: |
+          if [ -f "settings.gradle" ] || [ -f "settings.gradle.kts" ]; then
+            echo "✅ settings.gradle found."
+          else
+            echo "❌ Error: settings.gradle is missing!"
+            exit 1
+          fi
+          
+          if [ -d "app" ]; then
+            echo "✅ app directory found."
+            ls -R app
+          else
+            echo "❌ Error: app directory is missing!"
+            exit 1
+          fi
