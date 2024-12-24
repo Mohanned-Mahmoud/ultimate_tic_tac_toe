@@ -10,6 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ultimate_tic_tac_toe/Ultimit_X_O
+
     steps:
     # Step 1: Checkout the code
     - name: Checkout code
@@ -22,35 +26,24 @@ jobs:
         distribution: 'temurin'
         java-version: '11'
 
-    # Step 3: Cache Gradle dependencies
-    - name: Cache Gradle dependencies
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.gradle/caches
-          ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
-
-    # Step 4: Grant execute permission for Gradle wrapper
+    # Step 3: Grant execute permission for Gradle wrapper
     - name: Grant execute permission for Gradle wrapper
       run: chmod +x ./gradlew
 
-    # Step 5: Build and run Unit Tests
+    # Step 4: Build and run Unit Tests
     - name: Build with Gradle
       run: ./gradlew build
 
     - name: Run Unit Tests
       run: ./gradlew test
 
-    # Step 6: Run Instrumented UI Tests
+    # Step 5: Run Instrumented UI Tests
     - name: Run UI Tests
       run: ./gradlew connectedAndroidTest
       env:
         ANDROID_SDK_ROOT: ${{ runner.tool_cache }}/android-sdk
 
-    # Step 7: Upload Test Results
+    # Step 6: Upload Test Results
     - name: Upload Unit Test Results
       uses: actions/upload-artifact@v3
       if: always()
