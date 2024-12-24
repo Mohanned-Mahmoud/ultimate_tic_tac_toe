@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ultimate_tic_tac_toe/Ultimit_X_O
+        working-directory: Ultimit_X_O
 
     steps:
     # Step 1: Checkout the code
